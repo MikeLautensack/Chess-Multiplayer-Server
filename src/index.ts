@@ -88,3 +88,5 @@ io.of("/chat").adapter.on("leave-room", (room: string) => {
 io.of("/chat").adapter.on("delete-room", (room: string) => {
   console.log(`Chatroom: ${room}, has been deleted`);
 });
+
+// test
