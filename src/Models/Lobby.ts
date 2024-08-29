@@ -1,14 +1,22 @@
+import Game from "./Game";
 import Player from "./Player";
 
 class Lobby {
   private lobbyId: number;
   private lobbyName: string;
   private players: Player[];
+  private games: Game[];
 
-  constructor(lobbyId: number, lobbyName: string, players: Player[]) {
+  constructor(
+    lobbyId: number,
+    lobbyName: string,
+    players: Player[],
+    games: Game[]
+  ) {
     this.lobbyId = lobbyId;
     this.lobbyName = lobbyName;
     this.players = players;
+    this.games = games;
   }
 
   public getLobbyId(): number {
@@ -21,6 +29,10 @@ class Lobby {
 
   public getPlayers(): Player[] {
     return this.players;
+  }
+
+  public getGames(): Game[] {
+    return this.games;
   }
 }
 
