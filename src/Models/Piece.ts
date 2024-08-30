@@ -1,26 +1,28 @@
+import Position from "./Position";
+
 abstract class Piece {
   protected pieceId: number;
-  protected position: string;
+  protected position: Position;
   protected color: "white" | "black";
-  protected pinned: boolean = false;
+  protected isPinned: boolean = false;
 
   constructor(
     pieceId: number,
-    position: string,
+    position: Position,
     color: "white" | "black",
-    pinned: boolean
+    isPinned: boolean
   ) {
     this.pieceId = pieceId;
     this.position = position;
     this.color = color;
-    this.pinned = pinned;
+    this.isPinned = isPinned;
   }
 
   public getPieceId(): number {
     return this.pieceId;
   }
 
-  public getPosition(): string {
+  public getPosition(): Position {
     return this.position;
   }
 
@@ -29,7 +31,7 @@ abstract class Piece {
   }
 
   public getPinned(): boolean {
-    return this.pinned;
+    return this.isPinned;
   }
 
   // abstract move(piece)

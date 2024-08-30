@@ -1,20 +1,22 @@
 import Square from "./Square";
 
+export type GridItem = undefined | Square;
+
 abstract class Board {
   protected boardId: number;
-  protected squares: Square[][];
+  protected grid: GridItem[][];
 
-  constructor(boardId: number, squares: Square[][]) {
+  constructor(boardId: number, grid: GridItem[][]) {
     this.boardId = boardId;
-    this.squares = squares;
+    this.grid = grid;
   }
 
   public getBoardId(): number {
     return this.boardId;
   }
 
-  public getSquares(): Square[][] {
-    return this.squares;
+  public getGrid(): GridItem[][] {
+    return this.grid;
   }
 }
 
