@@ -1,23 +1,22 @@
+import Board from "./Board";
 import Player from "./Player";
 
 export type Result = undefined | "white won" | "black won" | "draw";
 
 abstract class Game {
   protected gameId: number;
-  protected isWhiteToMove: boolean = true;
+  protected isWhiteToMove: boolean | undefined = undefined;
   protected whitePlayer: Player;
   protected blackPlayer: Player;
   protected result: undefined | "white won" | "black won" | "draw";
 
   constructor(
     gameId: number,
-    isWhiteToMove: boolean,
     whitePlayer: Player,
     blackPlayer: Player,
     result: Result
   ) {
     this.gameId = gameId;
-    this.isWhiteToMove = isWhiteToMove;
     this.whitePlayer = whitePlayer;
     this.blackPlayer = blackPlayer;
     this.result = result;
@@ -27,7 +26,7 @@ abstract class Game {
     return this.gameId;
   }
 
-  public getWhiteToMove(): boolean {
+  public getIsWhiteToMove(): boolean | undefined {
     return this.isWhiteToMove;
   }
 
