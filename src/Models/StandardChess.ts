@@ -3,16 +3,14 @@ import Player from "./Player";
 import StandardChessBoard from "./StandardChessBoard";
 
 class StandardChess extends Game {
-  private board: StandardChessBoard;
+  private board: StandardChessBoard = new StandardChessBoard(1);
   constructor(
     gameId: number,
     whitePlayer: Player,
     blackPlayer: Player,
-    result: Result,
-    board: StandardChessBoard
+    result: Result
   ) {
     super(gameId, whitePlayer, blackPlayer, result);
-    this.board = board;
   }
 
   public getBoard(): StandardChessBoard {

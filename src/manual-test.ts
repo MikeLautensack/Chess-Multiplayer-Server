@@ -6,8 +6,7 @@ const chess = new StandardChess(
   1,
   new Player("test", 1),
   new Player("test2", 2),
-  undefined,
-  new StandardChessBoard(1)
+  undefined
 );
 
 const board = chess.getBoard();

@@ -4,20 +4,20 @@ import Position from "./Position";
 class Square {
   private squareId: number;
   private position: Position;
-  private occupied: boolean;
+  private isOccupied: boolean;
   private piece: Piece;
   private color: "light" | "dark";
 
   constructor(
     squareId: number,
     position: Position,
-    occupied: boolean,
+    isOccupied: boolean,
     piece: Piece,
     color: "light" | "dark"
   ) {
     this.squareId = squareId;
     this.position = position;
-    this.occupied = occupied;
+    this.isOccupied = isOccupied;
     this.piece = piece;
     this.color = color;
   }
@@ -30,8 +30,8 @@ class Square {
     return this.position;
   }
 
-  public getOccupied(): boolean {
-    return this.occupied;
+  public getIsOccupied(): boolean {
+    return this.isOccupied;
   }
 
   public getPiece(): Piece {
