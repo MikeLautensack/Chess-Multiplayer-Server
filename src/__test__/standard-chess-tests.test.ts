@@ -20,6 +20,12 @@ describe("standard chess tests", () => {
   test("init standard chess", () => {
     // Assertions
     expect(chess).toBeDefined();
-    expect(board).toBeUndefined();
+    expect(chess.getWhitePlayer()).toBeDefined();
+    expect(chess.getBlackPlayer()).toBeDefined();
+    expect(chess.getResult()).toBeUndefined();
+  });
+
+  test("start game", () => {
+    // Assertions
   });
 });

@@ -28,15 +28,13 @@ class StandardChessBoard extends Board {
           piece = new Pawn(
             this.getBoardId() * 100 + rank * 8 + file,
             position,
-            "white",
-            false
+            "white"
           );
         } else if (rank === 6) {
           piece = new Pawn(
             this.getBoardId() * 100 + rank * 8 + file,
             position,
-            "black",
-            false
+            "black"
           );
         }
 

@@ -6,16 +6,10 @@ abstract class Piece {
   protected color: "white" | "black";
   protected isPinned: boolean = false;
 
-  constructor(
-    pieceId: number,
-    position: Position,
-    color: "white" | "black",
-    isPinned: boolean
-  ) {
+  constructor(pieceId: number, position: Position, color: "white" | "black") {
     this.pieceId = pieceId;
     this.position = position;
     this.color = color;
-    this.isPinned = isPinned;
   }
 
   public getPieceId(): number {
