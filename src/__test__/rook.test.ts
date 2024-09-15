@@ -1,5 +1,5 @@
-import Position from "../Models/Position";
-import Rook from "../Models/Rook";
+import Position from "../Models/Position.js";
+import Rook from "../Models/Rook.js";
 
 describe("rook tests", () => {
   let rook: Rook;

@@ -1,5 +1,5 @@
-import King from "../Models/King";
-import Position from "../Models/Position";
+import King from "../Models/King.js";
+import Position from "../Models/Position.js";
 
 describe("king tests", () => {
   let king: King;

@@ -1,6 +1,6 @@
-import Player from "./Models/Player";
-import StandardChess from "./Models/StandardChess";
-import StandardChessBoard from "./Models/StandardChessBoard";
+import Player from "./Models/Player.js";
+import StandardChess from "./Models/StandardChess.js";
+import StandardChessBoard from "./Models/StandardChessBoard.js";
 
 const chess = new StandardChess(
   1,

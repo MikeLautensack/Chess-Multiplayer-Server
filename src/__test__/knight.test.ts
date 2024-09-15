@@ -1,5 +1,5 @@
-import Knight from "../Models/Knight";
-import Position from "../Models/Position";
+import Knight from "../Models/Knight.js";
+import Position from "../Models/Position.js";
 
 describe("knight tests", () => {
   let knight: Knight;

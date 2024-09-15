@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1725336421766" clover="3.2.0">
-  <project timestamp="1725336421769" name="All files">
-    <metrics statements="187" coveredstatements="60" conditionals="15" coveredconditionals="5" methods="58" coveredmethods="15" elements="260" coveredelements="80" complexity="0" loc="187" ncloc="187" packages="2" files="21" classes="21"/>
+<coverage generated="1726372814475" clover="3.2.0">
+  <project timestamp="1726372814475" name="All files">
+    <metrics statements="177" coveredstatements="75" conditionals="11" coveredconditionals="5" methods="59" coveredmethods="20" elements="247" coveredelements="100" complexity="0" loc="177" ncloc="177" packages="2" files="21" classes="21"/>
     <package name="src">
-      <metrics statements="76" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="15" coveredmethods="0"/>
+      <metrics statements="68" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="16" coveredmethods="0"/>
       <file name="chatroomHandler.ts" path="C:\CodeProjects\Apps\Chess\server\src\chatroomHandler.ts">
         <metrics statements="17" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
@@ -45,22 +45,16 @@
         <line num="24" count="0" type="stmt"/>
       </file>
       <file name="index.ts" path="C:\CodeProjects\Apps\Chess\server\src\index.ts">
-        <metrics statements="15" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
       </file>
       <file name="lobbyHandler.ts" path="C:\CodeProjects\Apps\Chess\server\src\lobbyHandler.ts">
         <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
@@ -90,9 +84,7 @@
         <line num="2" count="0" type="stmt"/>
       </file>
       <file name="manual-test.ts" path="C:\CodeProjects\Apps\Chess\server\src\manual-test.ts">
-        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
@@ -100,12 +92,12 @@
       </file>
     </package>
     <package name="src.Models">
-      <metrics statements="111" coveredstatements="60" conditionals="13" coveredconditionals="5" methods="43" coveredmethods="15"/>
+      <metrics statements="109" coveredstatements="75" conditionals="9" coveredconditionals="5" methods="43" coveredmethods="20"/>
       <file name="Bishop.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Bishop.ts">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="Board.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Board.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -128,20 +120,20 @@
         <line num="50" count="1" type="stmt"/>
       </file>
       <file name="King.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\King.ts">
-        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
       </file>
       <file name="Knight.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Knight.ts">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="Lobby.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Lobby.ts">
-        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
@@ -150,27 +142,25 @@
         <line num="27" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
       </file>
       <file name="Pawn.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Pawn.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="5" count="16" type="stmt"/>
-        <line num="13" count="16" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="5" count="17" type="stmt"/>
+        <line num="8" count="17" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
       </file>
       <file name="Piece.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Piece.ts">
-        <metrics statements="10" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
-        <line num="7" count="16" type="stmt"/>
-        <line num="15" count="16" type="stmt"/>
-        <line num="16" count="16" type="stmt"/>
-        <line num="17" count="16" type="stmt"/>
-        <line num="18" count="16" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
+        <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
+        <line num="7" count="22" type="stmt"/>
+        <line num="10" count="22" type="stmt"/>
+        <line num="11" count="22" type="stmt"/>
+        <line num="12" count="22" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="34" count="7" type="stmt"/>
       </file>
       <file name="Player.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Player.ts">
         <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
@@ -182,23 +172,23 @@
       </file>
       <file name="Position.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Position.ts">
         <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
-        <line num="6" count="64" type="stmt"/>
-        <line num="7" count="64" type="stmt"/>
+        <line num="6" count="70" type="stmt"/>
+        <line num="7" count="70" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
       </file>
       <file name="Queen.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Queen.ts">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="Rook.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Rook.ts">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
       <file name="Square.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\Square.ts">
         <metrics statements="11" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
@@ -228,7 +218,7 @@
         <line num="31" count="1" type="stmt"/>
       </file>
       <file name="StandardChessBoard.ts" path="C:\CodeProjects\Apps\Chess\server\src\Models\StandardChessBoard.ts">
-        <metrics statements="27" coveredstatements="20" conditionals="13" coveredconditionals="5" methods="3" coveredmethods="2"/>
+        <metrics statements="27" coveredstatements="20" conditionals="9" coveredconditionals="5" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -245,17 +235,17 @@
         <line num="26" count="64" type="stmt"/>
         <line num="27" count="64" type="cond" truecount="2" falsecount="0"/>
         <line num="28" count="8" type="stmt"/>
-        <line num="34" count="56" type="cond" truecount="1" falsecount="0"/>
-        <line num="35" count="8" type="stmt"/>
-        <line num="43" count="64" type="stmt"/>
+        <line num="33" count="56" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="8" type="stmt"/>
+        <line num="41" count="64" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="59" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="62" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
       </file>
     </package>
   </project>

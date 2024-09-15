@@ -1,8 +1,8 @@
-import Board from "./Board";
-import Pawn from "./Pawn";
-import Piece from "./Piece";
-import Position from "./Position";
-import Square from "./Square";
+import Board from "./Board.js";
+import Pawn from "./Pawn.js";
+import Piece from "./Piece.js";
+import Position from "./Position.js";
+import Square from "./Square.js";
 
 class StandardChessBoard extends Board {
   private squares: Square[][] = [];

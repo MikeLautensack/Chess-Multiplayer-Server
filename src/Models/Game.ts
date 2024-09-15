@@ -1,5 +1,5 @@
-import Board from "./Board";
-import Player from "./Player";
+import Board from "./Board.js";
+import Player from "./Player.js";
 
 export type Result = undefined | "white won" | "black won" | "draw";
 

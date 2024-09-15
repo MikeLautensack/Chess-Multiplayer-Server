@@ -1,5 +1,5 @@
-import Position from "../Models/Position";
-import Queen from "../Models/Queen";
+import Position from "../Models/Position.js";
+import Queen from "../Models/Queen.js";
 
 describe("queen tests", () => {
   let queen: Queen;

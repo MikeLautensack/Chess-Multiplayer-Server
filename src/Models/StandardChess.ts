@@ -1,6 +1,6 @@
-import Game, { Result } from "./Game";
-import Player from "./Player";
-import StandardChessBoard from "./StandardChessBoard";
+import Game, { Result } from "./Game.js";
+import Player from "./Player.js";
+import StandardChessBoard from "./StandardChessBoard.js";
 
 class StandardChess extends Game {
   private board: StandardChessBoard = new StandardChessBoard(1);

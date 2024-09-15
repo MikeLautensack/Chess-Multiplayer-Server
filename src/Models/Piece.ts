@@ -1,4 +1,4 @@
-import Position from "./Position";
+import Position from "./Position.js";
 
 abstract class Piece {
   protected pieceId: number;

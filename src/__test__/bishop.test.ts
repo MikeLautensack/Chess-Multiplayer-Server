@@ -1,5 +1,5 @@
-import Bishop from "../Models/Bishop";
-import Position from "../Models/Position";
+import Bishop from "../Models/Bishop.js";
+import Position from "../Models/Position.js";
 
 describe("bishop tests", () => {
   let bishop: Bishop;

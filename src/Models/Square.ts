@@ -1,5 +1,5 @@
-import Piece from "./Piece";
-import Position from "./Position";
+import Piece from "./Piece.js";
+import Position from "./Position.js";
 
 class Square {
   private squareId: number;

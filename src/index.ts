@@ -1,10 +1,6 @@
 import express, { Request, Response } from "express";
 import { createServer } from "node:http";
 import { Server } from "socket.io";
-import { mainHandler } from "./mainHandler";
-import { lobbyHandler } from "./lobbyHandler";
-import { gameroomHandler } from "./gameroomHandler";
-import { chatHandler } from "./chatroomHandler";
 // import type {
 //   ClientToServerEvents,
 //   InterServerEvents,
@@ -30,7 +26,4 @@ server.listen(port, () => {
 });
 
 //  Main namespaces
-io.on("connection", mainHandler);
-
-// Lobby namespace
-io.of("/lobby").on("connection", lobbyHandler);
+io.on("connection", (socket) => {});
