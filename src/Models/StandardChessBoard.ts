@@ -7,18 +7,25 @@ import Square from "./Square.js";
 class StandardChessBoard extends Board {
   private squares: Square[][] = [];
 
-  constructor(boardId: number) {
-    super(boardId);
-    this.initBoard();
+  constructor() {
+    super();
+    this.setPieces();
   }
 
-  public initBoard(): void {
+  public getSquares(): Square[][] {
+    return this.squares;
+  }
+
+  // public getSquareByPosition(): Square {}
+
+  public setPieces(): void {
     for (let rank = 0; rank < 8; rank++) {
       this.squares[rank] = [];
       for (let file = 0; file < 8; file++) {
         const position = new Position(
           String.fromCharCode(97 + file),
-          (8 - rank).toString()
+          (8 - rank).toString(),
+          [rank, file]
         );
         const isLightSquare = (rank + file) % 2 === 0;
         const squareColor = isLightSquare ? "light" : "dark";
@@ -43,7 +50,8 @@ class StandardChessBoard extends Board {
           position,
           piece !== undefined,
           piece as Piece,
-          squareColor
+          squareColor,
+          this
         );
       }
     }

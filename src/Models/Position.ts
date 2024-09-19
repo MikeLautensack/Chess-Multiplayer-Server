@@ -1,10 +1,12 @@
 class Position {
   private rank: string;
   private file: string;
+  private positionIndex: number[];
 
-  constructor(rank: string, file: string) {
+  constructor(rank: string, file: string, positionIndex: number[]) {
     this.rank = rank;
     this.file = file;
+    this.positionIndex = positionIndex;
   }
 
   public getRank(): string {
@@ -13,6 +15,10 @@ class Position {
 
   public getFile(): string {
     return this.file;
+  }
+
+  public getPositionIndex(): number[] {
+    return this.positionIndex;
   }
 }
 

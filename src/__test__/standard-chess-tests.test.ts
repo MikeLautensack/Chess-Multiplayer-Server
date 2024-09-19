@@ -9,9 +9,9 @@ describe("standard chess tests", () => {
   let board: StandardChessBoard;
 
   beforeAll(() => {
-    whitePlayer = new Player("whitePlayer", 1);
-    blackPlayer = new Player("blackPlayer", 2);
-    chess = new StandardChess(1, whitePlayer, blackPlayer, undefined);
+    whitePlayer = new Player("whitePlayer");
+    blackPlayer = new Player("blackPlayer");
+    chess = new StandardChess(whitePlayer, blackPlayer);
     board = chess.getBoard();
   });
 
@@ -20,9 +20,11 @@ describe("standard chess tests", () => {
   test("init standard chess", () => {
     // Assertions
     expect(chess).toBeDefined();
+    expect(board).toBeDefined();
     expect(chess.getWhitePlayer()).toBeDefined();
     expect(chess.getBlackPlayer()).toBeDefined();
     expect(chess.getResult()).toBeUndefined();
+    expect(chess.getIsWhiteToMove()).toBeTruthy();
   });
 
   test("start game", () => {

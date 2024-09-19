@@ -1,25 +1,19 @@
-import Board from "./Board.js";
+import { genId } from "../utils/utils.js";
 import Player from "./Player.js";
 
 export type Result = undefined | "white won" | "black won" | "draw";
 
 abstract class Game {
   protected gameId: number;
-  protected isWhiteToMove: boolean | undefined = undefined;
+  protected isWhiteToMove: boolean | undefined = true;
   protected whitePlayer: Player;
   protected blackPlayer: Player;
-  protected result: undefined | "white won" | "black won" | "draw";
+  protected result: undefined | "white won" | "black won" | "draw" = undefined;
 
-  constructor(
-    gameId: number,
-    whitePlayer: Player,
-    blackPlayer: Player,
-    result: Result
-  ) {
-    this.gameId = gameId;
+  constructor(whitePlayer: Player, blackPlayer: Player) {
+    this.gameId = genId();
     this.whitePlayer = whitePlayer;
     this.blackPlayer = blackPlayer;
-    this.result = result;
   }
 
   public getGameId(): number {
@@ -43,6 +37,8 @@ abstract class Game {
   }
 
   abstract startGame(): void;
+
+  abstract makeMove(): void;
 
   abstract endGame(): void;
 }

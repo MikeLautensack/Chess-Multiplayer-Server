@@ -1,3 +1,4 @@
+import { genId } from "../utils/utils.js";
 import Square from "./Square.js";
 
 export type GridItem = undefined | Square;
@@ -5,16 +6,16 @@ export type GridItem = undefined | Square;
 abstract class Board {
   protected boardId: number;
 
-  constructor(boardId: number) {
-    this.boardId = boardId;
+  constructor() {
+    this.boardId = genId();
   }
 
   public getBoardId(): number {
     return this.boardId;
   }
 
-  abstract initBoard(): void;
-
+  abstract setPieces(): void;
+  abstract getSquares(): Square[][];
   abstract printBoard(): void;
 }
 

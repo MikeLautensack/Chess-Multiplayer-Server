@@ -16,3 +16,7 @@ export interface SocketData {
   name: string;
   age: number;
 }
+
+export type Access = "public" | "private";
+export type PieceColor = "white" | "black";
+export type SquareColor = "light" | "dark";
