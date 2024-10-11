@@ -1,3 +1,4 @@
+import Board from "./Board.js";
 import Position from "./Position.js";
 
 abstract class Piece {
@@ -5,11 +6,19 @@ abstract class Piece {
   protected position: Position;
   protected color: "white" | "black";
   protected isPinned: boolean = false;
+  protected pieceStr: string;
+  protected legalMoves: Position[] = [];
 
-  constructor(pieceId: number, position: Position, color: "white" | "black") {
+  constructor(
+    pieceId: number,
+    position: Position,
+    color: "white" | "black",
+    pieceStr: string
+  ) {
     this.pieceId = pieceId;
     this.position = position;
     this.color = color;
+    this.pieceStr = pieceStr;
   }
 
   public getPieceId(): number {
@@ -28,7 +37,11 @@ abstract class Piece {
     return this.isPinned;
   }
 
-  // abstract move(piece)
+  public getPieceStr(): string {
+    return this.pieceStr;
+  }
+
+  abstract calcLegalMoves(board: Board): Position[];
 }
 
 export default Piece;

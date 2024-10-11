@@ -4,6 +4,7 @@ import StandardChessBoard from "./StandardChessBoard.js";
 
 class StandardChess extends Game {
   private board: StandardChessBoard = new StandardChessBoard();
+
   constructor(whitePlayer: Player, blackPlayer: Player) {
     super(whitePlayer, blackPlayer);
   }

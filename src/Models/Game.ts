@@ -8,6 +8,8 @@ abstract class Game {
   protected isWhiteToMove: boolean | undefined = true;
   protected whitePlayer: Player;
   protected blackPlayer: Player;
+  protected checkmate: boolean = false;
+  protected stalemate: boolean = false;
   protected result: undefined | "white won" | "black won" | "draw" = undefined;
 
   constructor(whitePlayer: Player, blackPlayer: Player) {

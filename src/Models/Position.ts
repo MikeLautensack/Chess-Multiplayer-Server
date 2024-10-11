@@ -1,15 +1,15 @@
 class Position {
-  private rank: string;
+  private rank: number;
   private file: string;
   private positionIndex: number[];
 
-  constructor(rank: string, file: string, positionIndex: number[]) {
+  constructor(rank: number, file: string, positionIndex: number[]) {
     this.rank = rank;
     this.file = file;
     this.positionIndex = positionIndex;
   }
 
-  public getRank(): string {
+  public getRank(): number {
     return this.rank;
   }
 

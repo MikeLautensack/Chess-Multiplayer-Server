@@ -7,8 +7,9 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "node --loader ts-node/esm src/index.ts",
+    "play": "node --loader ts-node/esm src/play.ts",
     "build": "tsc",
-    "manual-test": "ts-node src/manual-test.ts",
+    "manual-test": "node --loader ts-node/esm src/manual-test.ts",
     "test": "jest --verbose --coverage"
   },
   "author": "",

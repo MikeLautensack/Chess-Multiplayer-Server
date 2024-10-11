@@ -1,5 +1,4 @@
 import { SquareColor } from "../types.js";
-import { directions } from "../utils/utils.js";
 import Board from "./Board.js";
 import Piece from "./Piece.js";
 import Position from "./Position.js";
@@ -8,33 +7,50 @@ class Square {
   private squareId: number;
   private position: Position;
   private isOccupied: boolean;
-  private piece: Piece;
+  private piece: Piece | undefined = undefined;
   private color: SquareColor;
-  private adjacencies: Map<string, Square | undefined[][]>;
+  private isControlledByWhite: boolean = false;
+  private isControlledByBlack: boolean = false;
+  private adjacencies: Map<string, Square | undefined> = new Map<
+    string,
+    Square | undefined
+  >();
 
   constructor(
     squareId: number,
     position: Position,
     isOccupied: boolean,
-    piece: Piece,
     color: SquareColor,
     board: Board
   ) {
     this.squareId = squareId;
     this.position = position;
     this.isOccupied = isOccupied;
-    this.piece = piece;
     this.color = color;
     this.setAdjacencies(board);
   }
 
   public setAdjacencies(board: Board): void {
     const squares = board.getSquares();
-    for (let i = 0; i < squares.length; i++) {
-      for (let j = 0; j < squares[i].length; j++) {
-        const square = squares[i][j];
+    const currentPostitionIndex = this.position.getPositionIndex();
+    directions.forEach((positionIndexMod: number[], direction: string) => {
+      const rank = positionIndexMod[0] + currentPostitionIndex[0];
+      const file = positionIndexMod[1] + currentPostitionIndex[1];
+      if (
+        rank >= 0 &&
+        rank < squares.length &&
+        file >= 0 &&
+        file < squares[rank].length
+      ) {
+        this.adjacencies.set(direction, squares[rank][file]);
+      } else {
+        this.adjacencies.set(direction, undefined);
       }
-    }
+    });
+  }
+
+  public getAdjacencies(): Map<string, Square | undefined> {
+    return this.adjacencies;
   }
 
   public getSquareId(): number {
@@ -49,13 +65,40 @@ class Square {
     return this.isOccupied;
   }
 
-  public getPiece(): Piece {
+  public setIsOccupied(isOccupied: boolean): void {
+    this.isOccupied = isOccupied;
+  }
+
+  public getPiece(): Piece | undefined {
     return this.piece;
+  }
+
+  public setPiece(piece: Piece): void {
+    this.piece = piece;
   }
 
   public getColor(): SquareColor {
     return this.color;
   }
+
+  public getIsControlledByWhite(): boolean {
+    return this.isControlledByWhite;
+  }
+
+  public getIsControlledByBlack(): boolean {
+    return this.isControlledByBlack;
+  }
 }
 
 export default Square;
+
+export const directions = new Map([
+  ["nw", [-1, -1]],
+  ["n", [-1, 0]],
+  ["ne", [-1, 1]],
+  ["w", [0, -1]],
+  ["e", [0, 1]],
+  ["sw", [1, -1]],
+  ["s", [1, 0]],
+  ["se", [1, 1]],
+]);

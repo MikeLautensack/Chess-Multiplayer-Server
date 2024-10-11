@@ -9,10 +9,6 @@ class Time {
     this.seconds = seconds;
   }
 
-  public startTick(): void {}
-
-  public stopTick(): void {}
-
   public getTimeString(): string {
     return `${this.hours}:${this.minutes}:${this.seconds}`;
   }
@@ -29,3 +25,5 @@ class Time {
     return this.seconds;
   }
 }
+
+export default Time;
