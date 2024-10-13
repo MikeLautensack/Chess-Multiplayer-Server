@@ -1,8 +1,8 @@
 import Board from "./Board.js";
 import Piece from "./Piece.js";
 import Position from "./Position.js";
+import Rook from "./Rook.js";
 import { directions } from "./Square.js";
-import { files, ranks } from "./StandardChessBoard.js";
 
 class King extends Piece {
   private hasMoved: boolean = false;
@@ -15,6 +15,32 @@ class King extends Piece {
       color,
       `${color === "white" ? "W" : color === "black" && "B"}K`
     );
+  }
+
+  public getHasMoved(): boolean {
+    return this.hasMoved;
+  }
+
+  public getInCheck(): boolean {
+    return this.inCheck;
+  }
+
+  public setControlledSquares(board: Board): void {
+    const squares = board.getSquares();
+    const position = this.position;
+    const rank = position.getPositionIndex()[0];
+    const file = position.getPositionIndex()[1];
+    const color = this.color;
+    directions.forEach((offset: number[]) => {
+      const square = squares[rank + offset[0]][file + offset[1]];
+      if (square) {
+        if (color === "white") {
+          square.setIsControlledByWhite(true);
+        } else {
+          square.setIsControlledByBlack(true);
+        }
+      }
+    });
   }
 
   public calcLegalMoves(board: Board): Position[] {
@@ -76,9 +102,14 @@ class King extends Piece {
           }
         }
         const isF1Occupied = squares[rankIndex][5].getIsOccupied();
-        if (!shortCastleObsticleDetected && !isF1Occupied) {
-          const castlePos = squares[rankIndex][6].getPosition();
-          posArr.push(castlePos);
+        const rookSquare = squares[7][7];
+        const rook = rookSquare.getPiece() as Rook;
+        if (rook) {
+          const hasRookMoved = rook.getHasMoved();
+          if (!shortCastleObsticleDetected && !isF1Occupied && !hasRookMoved) {
+            const castlePos = squares[rankIndex][6].getPosition();
+            posArr.push(castlePos);
+          }
         }
 
         // Check long castle
@@ -92,9 +123,14 @@ class King extends Piece {
           }
         }
         const isD1Occupied = squares[rankIndex][3].getIsOccupied();
-        if (!longCastleObsticleDetected && !isD1Occupied) {
-          const castlePos = squares[rankIndex][2].getPosition();
-          posArr.push(castlePos);
+        const rookSquareLong = squares[7][0];
+        const rookLong = rookSquareLong.getPiece() as Rook;
+        if (rookLong) {
+          const hasRookMoved = rookLong.getHasMoved();
+          if (!longCastleObsticleDetected && !isD1Occupied && !hasRookMoved) {
+            const castlePos = squares[rankIndex][2].getPosition();
+            posArr.push(castlePos);
+          }
         }
       } else {
         // Check short castle
@@ -108,9 +144,14 @@ class King extends Piece {
           }
         }
         const isF8Occupied = squares[rankIndex][5].getIsOccupied();
-        if (!shortCastleObsticleDetected && !isF8Occupied) {
-          const castlePos = squares[rankIndex][6].getPosition();
-          posArr.push(castlePos);
+        const rookSquare = squares[0][7];
+        const rook = rookSquare.getPiece() as Rook;
+        if (rook) {
+          const hasRookMoved = rook.getHasMoved();
+          if (!shortCastleObsticleDetected && !isF8Occupied && !hasRookMoved) {
+            const castlePos = squares[rankIndex][6].getPosition();
+            posArr.push(castlePos);
+          }
         }
 
         // Check long castle
@@ -124,9 +165,14 @@ class King extends Piece {
           }
         }
         const isD8Occupied = squares[rankIndex][3].getIsOccupied();
-        if (!longCastleObsticleDetected && !isD8Occupied) {
-          const castlePos = squares[rankIndex][2].getPosition();
-          posArr.push(castlePos);
+        const rookSquareLong = squares[0][0];
+        const rookLong = rookSquareLong.getPiece() as Rook;
+        if (rookLong) {
+          const hasRookMoved = rookLong.getHasMoved();
+          if (!longCastleObsticleDetected && !isD8Occupied && !hasRookMoved) {
+            const castlePos = squares[rankIndex][2].getPosition();
+            posArr.push(castlePos);
+          }
         }
       }
     }

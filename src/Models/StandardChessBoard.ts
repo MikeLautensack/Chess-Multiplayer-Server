@@ -4,6 +4,7 @@ import King from "./King.js";
 import Knight from "./Knight.js";
 import Pawn from "./Pawn.js";
 import Piece from "./Piece.js";
+import Pin from "./Pin.js";
 import Position from "./Position.js";
 import Queen from "./Queen.js";
 import Rook from "./Rook.js";
@@ -13,6 +14,7 @@ class StandardChessBoard extends Board {
   private squares: Square[][] = Array(8)
     .fill(null)
     .map(() => Array(8));
+  private pins: Map<number, Pin> = new Map([]);
 
   constructor() {
     super();
@@ -151,6 +153,8 @@ class StandardChessBoard extends Board {
     }
   }
 
+  public calcControlAndPins(): void {}
+
   public getSquares(): Square[][] {
     return this.squares;
   }
@@ -256,3 +260,11 @@ export const startingPositions = new Map([
   ["g1", { pieceColor: "white", pieceType: "WN" }],
   ["h1", { pieceColor: "white", pieceType: "WR" }],
 ]);
+
+const checkForPin = (
+  squares: Square[][],
+  piecePos: Position,
+  dir: string
+): Pin | undefined => {
+  return undefined;
+};

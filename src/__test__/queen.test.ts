@@ -5,7 +5,7 @@ describe("queen tests", () => {
   let queen: Queen;
 
   beforeAll(() => {
-    queen = new Queen(1, new Position("2", "A"), "white");
+    queen = new Queen(1, new Position(1, "a", [7, 0]), "white");
   });
 
   afterAll(() => {});

@@ -5,7 +5,7 @@ describe("king tests", () => {
   let king: King;
 
   beforeAll(() => {
-    king = new King(1, new Position("2", "A"), "white");
+    king = new King(1, new Position(1, "a", [7, 0]), "white");
   });
 
   afterAll(() => {});

@@ -12,6 +12,24 @@ class Knight extends Piece {
     );
   }
 
+  public setControlledSquares(board: Board): void {
+    const squares = board.getSquares();
+    const position = this.position;
+    const rank = position.getPositionIndex()[0];
+    const file = position.getPositionIndex()[1];
+    const color = this.color;
+    knightOffsets.forEach((offset: number[]) => {
+      const square = squares[rank + offset[0]][file + offset[1]];
+      if (square) {
+        if (color === "white") {
+          square.setIsControlledByWhite(true);
+        } else {
+          square.setIsControlledByBlack(true);
+        }
+      }
+    });
+  }
+
   public calcLegalMoves(board: Board): Position[] {
     if (!this.isPinned) {
       let posArr: Position[] = [];

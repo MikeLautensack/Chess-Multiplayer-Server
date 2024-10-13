@@ -12,6 +12,32 @@ class Bishop extends Piece {
     );
   }
 
+  public setControlledSquares(board: Board): void {
+    const position = this.position;
+    const square = board.getSquare(position);
+    const color = this.color;
+    const dirs = ["nw", "ne", "se", "sw"];
+    dirs.forEach((dir) => {
+      let obstructionDetected = false;
+      let adjacentSquare = square?.getAdjacencies().get(dir);
+      while (!obstructionDetected) {
+        if (adjacentSquare) {
+          if (color === "white") {
+            adjacentSquare.setIsControlledByWhite(true);
+          } else {
+            adjacentSquare.setIsControlledByBlack(true);
+          }
+          const isSquareOccupied = adjacentSquare.getIsOccupied();
+          if (isSquareOccupied) {
+            obstructionDetected = true;
+          } else {
+            adjacentSquare = adjacentSquare.getAdjacencies().get(dir);
+          }
+        }
+      }
+    });
+  }
+
   public calcLegalMoves(board: Board): Position[] {
     let posArr: Position[] = [];
     const position = this.getPosition();

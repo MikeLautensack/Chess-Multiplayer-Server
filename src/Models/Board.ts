@@ -17,6 +17,7 @@ abstract class Board {
 
   abstract initSquares(): void;
   abstract setupBoard(): void;
+  abstract calcControlAndPins(): void;
   abstract getSquares(): Square[][];
   abstract getSquare(position: Position): Square | undefined;
   abstract printBoard(): void;

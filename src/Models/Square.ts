@@ -85,8 +85,16 @@ class Square {
     return this.isControlledByWhite;
   }
 
+  public setIsControlledByWhite(bool: boolean): void {
+    this.isControlledByWhite = bool;
+  }
+
   public getIsControlledByBlack(): boolean {
     return this.isControlledByBlack;
+  }
+
+  public setIsControlledByBlack(bool: boolean): void {
+    this.isControlledByBlack = bool;
   }
 }
 

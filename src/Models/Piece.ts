@@ -8,6 +8,7 @@ abstract class Piece {
   protected isPinned: boolean = false;
   protected pieceStr: string;
   protected legalMoves: Position[] = [];
+  protected pinnedBy: Piece | undefined;
 
   constructor(
     pieceId: number,
@@ -41,6 +42,15 @@ abstract class Piece {
     return this.pieceStr;
   }
 
+  public getPinnedBy(): Piece | undefined {
+    return this.pinnedBy;
+  }
+
+  public setPinnedBy(piece: Piece): void {
+    this.pinnedBy = piece;
+  }
+
+  abstract setControlledSquares(board: Board): void;
   abstract calcLegalMoves(board: Board): Position[];
 }
 

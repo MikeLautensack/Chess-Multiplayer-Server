@@ -13,6 +13,31 @@ class Queen extends Piece {
     );
   }
 
+  public setControlledSquares(board: Board): void {
+    const position = this.position;
+    const square = board.getSquare(position);
+    const color = this.color;
+    directions.forEach((_, dir) => {
+      let obstructionDetected = false;
+      let adjacentSquare = square?.getAdjacencies().get(dir);
+      while (!obstructionDetected) {
+        if (adjacentSquare) {
+          if (color === "white") {
+            adjacentSquare.setIsControlledByWhite(true);
+          } else {
+            adjacentSquare.setIsControlledByBlack(true);
+          }
+          const isSquareOccupied = adjacentSquare.getIsOccupied();
+          if (isSquareOccupied) {
+            obstructionDetected = true;
+          } else {
+            adjacentSquare = adjacentSquare.getAdjacencies().get(dir);
+          }
+        }
+      }
+    });
+  }
+
   public calcLegalMoves(board: Board): Position[] {
     let posArr: Position[] = [];
     const position = this.getPosition();
@@ -40,6 +65,11 @@ class Queen extends Piece {
         }
       }
     });
+
+    // If a queen is pinned the only possible legal move is to capture the pinning piece
+    if (this.isPinned) {
+      // Itterate through posArr and see if it contains the pinning piece
+    }
 
     return posArr;
   }

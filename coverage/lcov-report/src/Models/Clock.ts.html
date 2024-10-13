@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/Models/Time.ts</title>
+    <title>Code coverage report for src/Models/Clock.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/Models</a> Time.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/Models</a> Clock.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
@@ -91,8 +91,10 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -100,10 +102,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,35 +119,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">class Time {
-  private hours: number;
-  private minutes: number;
-  private seconds: number;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Time from "./Time.js";
+import TimeControl from "./TimeControl.js";
 &nbsp;
-<span class="fstat-no" title="function not covered" >  constructor(h</span>ours: number, minutes: number, seconds: number) {
-<span class="cstat-no" title="statement not covered" >    this.hours = hours;</span>
-<span class="cstat-no" title="statement not covered" >    this.minutes = minutes;</span>
-<span class="cstat-no" title="statement not covered" >    this.seconds = seconds;</span>
+class Clock {
+  private increment: number;
+  private whiteTime: Time;
+  private blackTime: Time;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(t</span>imeControl: TimeControl) {
+<span class="cstat-no" title="statement not covered" >    this.increment = timeControl.getIncrement();</span>
+<span class="cstat-no" title="statement not covered" >    this.whiteTime = timeControl.getTime();</span>
+<span class="cstat-no" title="statement not covered" >    this.blackTime = timeControl.getTime();</span>
   }
 &nbsp;
-  public <span class="fstat-no" title="function not covered" >getTimeString(</span>): string {
-<span class="cstat-no" title="statement not covered" >    return `${this.hours}:${this.minutes}:${this.seconds}`;</span>
+  public <span class="fstat-no" title="function not covered" >getIncrement(</span>): number {
+<span class="cstat-no" title="statement not covered" >    return this.increment;</span>
   }
 &nbsp;
-  public <span class="fstat-no" title="function not covered" >getHours(</span>): number {
-<span class="cstat-no" title="statement not covered" >    return this.hours;</span>
+  public <span class="fstat-no" title="function not covered" >getWhiteTime(</span>): Time {
+<span class="cstat-no" title="statement not covered" >    return this.whiteTime;</span>
   }
 &nbsp;
-  public <span class="fstat-no" title="function not covered" >getMinutes(</span>): number {
-<span class="cstat-no" title="statement not covered" >    return this.minutes;</span>
-  }
-&nbsp;
-  public <span class="fstat-no" title="function not covered" >getSeconds(</span>): number {
-<span class="cstat-no" title="statement not covered" >    return this.seconds;</span>
+  public <span class="fstat-no" title="function not covered" >getBlackTime(</span>): Time {
+<span class="cstat-no" title="statement not covered" >    return this.blackTime;</span>
   }
 }
 &nbsp;
-export default Time;
+export default Clock;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

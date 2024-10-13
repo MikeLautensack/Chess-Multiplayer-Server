@@ -5,7 +5,7 @@ describe("rook tests", () => {
   let rook: Rook;
 
   beforeAll(() => {
-    rook = new Rook(1, new Position("2", "A"), "white");
+    rook = new Rook(1, new Position(1, "a", [7, 0]), "white");
   });
 
   afterAll(() => {});
