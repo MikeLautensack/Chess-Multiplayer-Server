@@ -12,7 +12,8 @@ class King extends Piece {
     super(
       position,
       color,
-      `${color === "white" ? "W" : color === "black" && "B"}K`
+      `${color === "white" ? "W" : color === "black" && "B"}K`,
+      color === "white" ? "♚ " : "♔ "
     );
   }
 

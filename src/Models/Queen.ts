@@ -8,7 +8,8 @@ class Queen extends Piece {
     super(
       position,
       color,
-      `${color === "white" ? "W" : color === "black" && "B"}Q`
+      `${color === "white" ? "W" : color === "black" && "B"}Q`,
+      color === "white" ? "♛ " : "♕ "
     );
   }
 

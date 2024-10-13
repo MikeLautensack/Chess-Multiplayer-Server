@@ -7,7 +7,8 @@ class Bishop extends Piece {
     super(
       position,
       color,
-      `${color === "white" ? "W" : color === "black" && "B"}B`
+      `${color === "white" ? "W" : color === "black" && "B"}B`,
+      color === "white" ? "♝ " : "♗ "
     );
   }
 

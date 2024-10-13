@@ -7,7 +7,8 @@ class Knight extends Piece {
     super(
       position,
       color,
-      `${color === "white" ? "W" : color === "black" && "B"}N`
+      `${color === "white" ? "W" : color === "black" && "B"}N`,
+      color === "white" ? "♞ " : "♘ "
     );
   }
 

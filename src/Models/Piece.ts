@@ -8,14 +8,21 @@ abstract class Piece {
   protected color: "white" | "black";
   protected isPinned: boolean = false;
   protected pieceStr: string;
+  protected pieceUnicode: string;
   protected legalMoves: Position[] = [];
   protected pinnedBy: Piece | undefined;
 
-  constructor(position: Position, color: "white" | "black", pieceStr: string) {
+  constructor(
+    position: Position,
+    color: "white" | "black",
+    pieceStr: string,
+    pieceUnicode: string
+  ) {
     this.pieceId = uuidv4();
     this.position = position;
     this.color = color;
     this.pieceStr = pieceStr;
+    this.pieceUnicode = pieceUnicode;
   }
 
   public getPieceId(): string {
@@ -36,6 +43,10 @@ abstract class Piece {
 
   public getPieceStr(): string {
     return this.pieceStr;
+  }
+
+  public getPieceUnicode(): string {
+    return this.pieceUnicode;
   }
 
   public getPinnedBy(): Piece | undefined {

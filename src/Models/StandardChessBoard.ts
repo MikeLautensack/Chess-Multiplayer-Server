@@ -183,7 +183,7 @@ class StandardChessBoard extends Board {
         const isOccupied = board[i][file].getIsOccupied();
         // console.log(board[i][file].getPiece());
         if (isOccupied) {
-          squareArr.push(board[i][file].getPiece()!.getPieceStr());
+          squareArr.push(board[i][file].getPiece()!.getPieceUnicode());
         } else {
           squareArr.push("__");
         }
