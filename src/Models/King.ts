@@ -8,9 +8,8 @@ class King extends Piece {
   private hasMoved: boolean = false;
   private inCheck: boolean = false;
 
-  constructor(pieceId: number, position: Position, color: "white" | "black") {
+  constructor(position: Position, color: "white" | "black") {
     super(
-      pieceId,
       position,
       color,
       `${color === "white" ? "W" : color === "black" && "B"}K`

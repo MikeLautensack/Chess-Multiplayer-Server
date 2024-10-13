@@ -1,4 +1,4 @@
-# Chess App Multiplayer Server & Node.js Console Chess!
+# Chess Multiplayer Server & Node.js Console Chess!
 
 Welcome to my chess app server repo! Take a look and how I build multiplayer chess servers with Node.js, Express.js and Socket.io or enjoy a game of chess in your console!
 

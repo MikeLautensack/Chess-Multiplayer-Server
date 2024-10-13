@@ -2,9 +2,10 @@ import { SquareColor } from "../types.js";
 import Board from "./Board.js";
 import Piece from "./Piece.js";
 import Position from "./Position.js";
+import { v4 as uuidv4 } from "uuid";
 
 class Square {
-  private squareId: number;
+  private squareId: string;
   private position: Position;
   private isOccupied: boolean;
   private piece: Piece | undefined = undefined;
@@ -17,13 +18,12 @@ class Square {
   >();
 
   constructor(
-    squareId: number,
     position: Position,
     isOccupied: boolean,
     color: SquareColor,
     board: Board
   ) {
-    this.squareId = squareId;
+    this.squareId = uuidv4();
     this.position = position;
     this.isOccupied = isOccupied;
     this.color = color;
@@ -53,7 +53,7 @@ class Square {
     return this.adjacencies;
   }
 
-  public getSquareId(): number {
+  public getSquareId(): string {
     return this.squareId;
   }
 

@@ -1,10 +1,10 @@
-import { genId } from "../utils/utils.js";
 import Player from "./Player.js";
+import { v4 as uuidv4 } from "uuid";
 
 export type Result = undefined | "white won" | "black won" | "draw";
 
 abstract class Game {
-  protected gameId: number;
+  protected gameId: string;
   protected isWhiteToMove: boolean | undefined = true;
   protected whitePlayer: Player;
   protected blackPlayer: Player;
@@ -13,12 +13,12 @@ abstract class Game {
   protected result: undefined | "white won" | "black won" | "draw" = undefined;
 
   constructor(whitePlayer: Player, blackPlayer: Player) {
-    this.gameId = genId();
+    this.gameId = uuidv4();
     this.whitePlayer = whitePlayer;
     this.blackPlayer = blackPlayer;
   }
 
-  public getGameId(): number {
+  public getGameId(): string {
     return this.gameId;
   }
 

@@ -1,13 +1,13 @@
 import { Access } from "../types.js";
-import { genId } from "../utils/utils.js";
 import Game from "./Game.js";
 import Player from "./Player.js";
+import { v4 as uuidv4 } from "uuid";
 
 class Lobby {
-  private lobbyId: number;
+  private lobbyId: string;
   private lobbyName: string;
   private players: Map<string, Player> = new Map<string, Player>();
-  private games: Map<number, Game> = new Map<number, Game>();
+  private games: Map<string, Game> = new Map<string, Game>();
   private host: Player;
   private access: Access;
   private password: string | undefined;
@@ -20,7 +20,7 @@ class Lobby {
     password?: string,
     maxPlayers?: number
   ) {
-    this.lobbyId = genId();
+    this.lobbyId = uuidv4();
     this.lobbyName = lobbyName;
     this.host = host;
     this.players.set(host.getUsername(), host);
@@ -29,7 +29,7 @@ class Lobby {
     maxPlayers ? (this.maxPlayers = maxPlayers) : (this.maxPlayers = 16);
   }
 
-  public getLobbyId(): number {
+  public getLobbyId(): string {
     return this.lobbyId;
   }
 
@@ -49,7 +49,7 @@ class Lobby {
     return this.maxPlayers;
   }
 
-  public getGames(): Map<number, Game> {
+  public getGames(): Map<string, Game> {
     return this.games;
   }
 
@@ -73,7 +73,7 @@ class Lobby {
     this.games.set(game.getGameId(), game);
   }
 
-  public removeGame(gameId: number): void {
+  public removeGame(gameId: string): void {
     this.games.delete(gameId);
   }
 }

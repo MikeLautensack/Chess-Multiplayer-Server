@@ -328,12 +328,7 @@
 <a name='L263'></a><a href='#L263'>263</a>
 <a name='L264'></a><a href='#L264'>264</a>
 <a name='L265'></a><a href='#L265'>265</a>
-<a name='L266'></a><a href='#L266'>266</a>
-<a name='L267'></a><a href='#L267'>267</a>
-<a name='L268'></a><a href='#L268'>268</a>
-<a name='L269'></a><a href='#L269'>269</a>
-<a name='L270'></a><a href='#L270'>270</a>
-<a name='L271'></a><a href='#L271'>271</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L266'></a><a href='#L266'>266</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -362,7 +357,6 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">128x</span>
 <span class="cline-any cline-yes">128x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -427,15 +421,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">128x</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">128x</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -632,7 +622,6 @@ class StandardChessBoard extends Board {
       for (let j = 0; j &lt; 8; j++) {
         const position = new Position(ranks.get(i)!, files.get(j)!, [i, j]);
         this.squares[i][j] = new Square(
-          i + j,
           position,
           false,
           (i + j) % 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >"light" </span>: "dark",
@@ -653,42 +642,42 @@ class StandardChessBoard extends Board {
           switch (file) {
             case "a":
               this.squares[i][j].setPiece(
-                new Rook(i + j, square.getPosition(), "black")
+                new Rook(square.getPosition(), "black")
               );
               break;
             case "b":
               this.squares[i][j].setPiece(
-                new Knight(i + j, square.getPosition(), "black")
+                new Knight(square.getPosition(), "black")
               );
               break;
             case "c":
               this.squares[i][j].setPiece(
-                new Bishop(i + j, square.getPosition(), "black")
+                new Bishop(square.getPosition(), "black")
               );
               break;
             case "d":
               this.squares[i][j].setPiece(
-                new Queen(i + j, square.getPosition(), "black")
+                new Queen(square.getPosition(), "black")
               );
               break;
             case "e":
               this.squares[i][j].setPiece(
-                new King(i + j, square.getPosition(), "black")
+                new King(square.getPosition(), "black")
               );
               break;
             case "f":
               this.squares[i][j].setPiece(
-                new Bishop(i + j, square.getPosition(), "black")
+                new Bishop(square.getPosition(), "black")
               );
               break;
             case "g":
               this.squares[i][j].setPiece(
-                new Knight(i + j, square.getPosition(), "black")
+                new Knight(square.getPosition(), "black")
               );
               break;
             case "h":
               this.squares[i][j].setPiece(
-                new Rook(i + j, square.getPosition(), "black")
+                new Rook(square.getPosition(), "black")
               );
               break;
           }
@@ -696,16 +685,12 @@ class StandardChessBoard extends Board {
         }
 &nbsp;
         if (rank === 7) {
-          this.squares[i][j].setPiece(
-            new Pawn(i + j, square.getPosition(), "black")
-          );
+          this.squares[i][j].setPiece(new Pawn(square.getPosition(), "black"));
           this.squares[i][j].setIsOccupied(true);
         }
 &nbsp;
         if (rank === 2) {
-          this.squares[i][j].setPiece(
-            new Pawn(i + j, square.getPosition(), "white")
-          );
+          this.squares[i][j].setPiece(new Pawn(square.getPosition(), "white"));
           this.squares[i][j].setIsOccupied(true);
         }
 &nbsp;
@@ -713,42 +698,42 @@ class StandardChessBoard extends Board {
           switch (file) {
             case "a":
               this.squares[i][j].setPiece(
-                new Rook(i + j, square.getPosition(), "white")
+                new Rook(square.getPosition(), "white")
               );
               break;
             case "b":
               this.squares[i][j].setPiece(
-                new Knight(i + j, square.getPosition(), "white")
+                new Knight(square.getPosition(), "white")
               );
               break;
             case "c":
               this.squares[i][j].setPiece(
-                new Bishop(i + j, square.getPosition(), "white")
+                new Bishop(square.getPosition(), "white")
               );
               break;
             case "d":
               this.squares[i][j].setPiece(
-                new Queen(i + j, square.getPosition(), "white")
+                new Queen(square.getPosition(), "white")
               );
               break;
             case "e":
               this.squares[i][j].setPiece(
-                new King(i + j, square.getPosition(), "white")
+                new King(square.getPosition(), "white")
               );
               break;
             case "f":
               this.squares[i][j].setPiece(
-                new Bishop(i + j, square.getPosition(), "white")
+                new Bishop(square.getPosition(), "white")
               );
               break;
             case "g":
               this.squares[i][j].setPiece(
-                new Knight(i + j, square.getPosition(), "white")
+                new Knight(square.getPosition(), "white")
               );
               break;
             case "h":
               this.squares[i][j].setPiece(
-                new Rook(i + j, square.getPosition(), "white")
+                new Rook(square.getPosition(), "white")
               );
               break;
           }
@@ -880,7 +865,7 @@ const checkForPin = <span class="fstat-no" title="function not covered" >(</span
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-12T23:10:06.769Z
+                at 2024-10-13T06:31:27.002Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

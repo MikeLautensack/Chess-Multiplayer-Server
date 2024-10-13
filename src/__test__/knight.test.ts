@@ -5,7 +5,7 @@ describe("knight tests", () => {
   let knight: Knight;
 
   beforeAll(() => {
-    knight = new Knight(1, new Position(1, "a", [7, 0]), "white");
+    knight = new Knight(new Position(1, "a", [7, 0]), "white");
   });
 
   afterAll(() => {});

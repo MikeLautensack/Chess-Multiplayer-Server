@@ -4,9 +4,8 @@ import Position from "./Position.js";
 import { directions } from "./Square.js";
 
 class Queen extends Piece {
-  constructor(pieceId: number, position: Position, color: "white" | "black") {
+  constructor(position: Position, color: "white" | "black") {
     super(
-      pieceId,
       position,
       color,
       `${color === "white" ? "W" : color === "black" && "B"}Q`

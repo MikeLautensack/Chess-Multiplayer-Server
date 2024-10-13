@@ -5,9 +5,8 @@ import Position from "./Position.js";
 class Rook extends Piece {
   private hasMoved: boolean = false;
 
-  constructor(pieceId: number, position: Position, color: "white" | "black") {
+  constructor(position: Position, color: "white" | "black") {
     super(
-      pieceId,
       position,
       color,
       `${color === "white" ? "W" : color === "black" && "B"}R`

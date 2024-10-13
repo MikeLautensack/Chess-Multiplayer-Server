@@ -5,7 +5,7 @@ describe("pawn tests", () => {
   let pawn: Pawn;
 
   beforeAll(() => {
-    pawn = new Pawn(1, new Position(1, "a", [7, 0]), "white");
+    pawn = new Pawn(new Position(1, "a", [7, 0]), "white");
   });
 
   afterAll(() => {});

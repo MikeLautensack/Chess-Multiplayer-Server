@@ -27,7 +27,6 @@ class StandardChessBoard extends Board {
       for (let j = 0; j < 8; j++) {
         const position = new Position(ranks.get(i)!, files.get(j)!, [i, j]);
         this.squares[i][j] = new Square(
-          i + j,
           position,
           false,
           (i + j) % 0 ? "light" : "dark",
@@ -48,42 +47,42 @@ class StandardChessBoard extends Board {
           switch (file) {
             case "a":
               this.squares[i][j].setPiece(
-                new Rook(i + j, square.getPosition(), "black")
+                new Rook(square.getPosition(), "black")
               );
               break;
             case "b":
               this.squares[i][j].setPiece(
-                new Knight(i + j, square.getPosition(), "black")
+                new Knight(square.getPosition(), "black")
               );
               break;
             case "c":
               this.squares[i][j].setPiece(
-                new Bishop(i + j, square.getPosition(), "black")
+                new Bishop(square.getPosition(), "black")
               );
               break;
             case "d":
               this.squares[i][j].setPiece(
-                new Queen(i + j, square.getPosition(), "black")
+                new Queen(square.getPosition(), "black")
               );
               break;
             case "e":
               this.squares[i][j].setPiece(
-                new King(i + j, square.getPosition(), "black")
+                new King(square.getPosition(), "black")
               );
               break;
             case "f":
               this.squares[i][j].setPiece(
-                new Bishop(i + j, square.getPosition(), "black")
+                new Bishop(square.getPosition(), "black")
               );
               break;
             case "g":
               this.squares[i][j].setPiece(
-                new Knight(i + j, square.getPosition(), "black")
+                new Knight(square.getPosition(), "black")
               );
               break;
             case "h":
               this.squares[i][j].setPiece(
-                new Rook(i + j, square.getPosition(), "black")
+                new Rook(square.getPosition(), "black")
               );
               break;
           }
@@ -91,16 +90,12 @@ class StandardChessBoard extends Board {
         }
 
         if (rank === 7) {
-          this.squares[i][j].setPiece(
-            new Pawn(i + j, square.getPosition(), "black")
-          );
+          this.squares[i][j].setPiece(new Pawn(square.getPosition(), "black"));
           this.squares[i][j].setIsOccupied(true);
         }
 
         if (rank === 2) {
-          this.squares[i][j].setPiece(
-            new Pawn(i + j, square.getPosition(), "white")
-          );
+          this.squares[i][j].setPiece(new Pawn(square.getPosition(), "white"));
           this.squares[i][j].setIsOccupied(true);
         }
 
@@ -108,42 +103,42 @@ class StandardChessBoard extends Board {
           switch (file) {
             case "a":
               this.squares[i][j].setPiece(
-                new Rook(i + j, square.getPosition(), "white")
+                new Rook(square.getPosition(), "white")
               );
               break;
             case "b":
               this.squares[i][j].setPiece(
-                new Knight(i + j, square.getPosition(), "white")
+                new Knight(square.getPosition(), "white")
               );
               break;
             case "c":
               this.squares[i][j].setPiece(
-                new Bishop(i + j, square.getPosition(), "white")
+                new Bishop(square.getPosition(), "white")
               );
               break;
             case "d":
               this.squares[i][j].setPiece(
-                new Queen(i + j, square.getPosition(), "white")
+                new Queen(square.getPosition(), "white")
               );
               break;
             case "e":
               this.squares[i][j].setPiece(
-                new King(i + j, square.getPosition(), "white")
+                new King(square.getPosition(), "white")
               );
               break;
             case "f":
               this.squares[i][j].setPiece(
-                new Bishop(i + j, square.getPosition(), "white")
+                new Bishop(square.getPosition(), "white")
               );
               break;
             case "g":
               this.squares[i][j].setPiece(
-                new Knight(i + j, square.getPosition(), "white")
+                new Knight(square.getPosition(), "white")
               );
               break;
             case "h":
               this.squares[i][j].setPiece(
-                new Rook(i + j, square.getPosition(), "white")
+                new Rook(square.getPosition(), "white")
               );
               break;
           }

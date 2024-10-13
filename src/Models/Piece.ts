@@ -1,8 +1,9 @@
 import Board from "./Board.js";
 import Position from "./Position.js";
+import { v4 as uuidv4 } from "uuid";
 
 abstract class Piece {
-  protected pieceId: number;
+  protected pieceId: string;
   protected position: Position;
   protected color: "white" | "black";
   protected isPinned: boolean = false;
@@ -10,19 +11,14 @@ abstract class Piece {
   protected legalMoves: Position[] = [];
   protected pinnedBy: Piece | undefined;
 
-  constructor(
-    pieceId: number,
-    position: Position,
-    color: "white" | "black",
-    pieceStr: string
-  ) {
-    this.pieceId = pieceId;
+  constructor(position: Position, color: "white" | "black", pieceStr: string) {
+    this.pieceId = uuidv4();
     this.position = position;
     this.color = color;
     this.pieceStr = pieceStr;
   }
 
-  public getPieceId(): number {
+  public getPieceId(): string {
     return this.pieceId;
   }
 

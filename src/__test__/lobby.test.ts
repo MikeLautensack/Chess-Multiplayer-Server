@@ -31,7 +31,7 @@ describe("lobby tests", () => {
     // Public Lobby Assertions
     expect(publicLobby).toBeDefined();
     expect(publicLobby.getLobbyId()).toBeDefined();
-    expect(publicLobby.getLobbyId().toString().length).toBe(8);
+    // expect(publicLobby.getLobbyId().toString().length).toBe(8);
     expect(publicLobby.getLobbyName()).toBe("test public lobby");
     expect(publicLobby.getAccess()).toBe("public");
     expect(publicLobby.getPassword()).toBeUndefined();
@@ -44,7 +44,7 @@ describe("lobby tests", () => {
     // Private Lobby Assertions
     expect(privateLobby).toBeDefined();
     expect(privateLobby.getLobbyId()).toBeDefined();
-    expect(privateLobby.getLobbyId().toString().length).toBe(8);
+    // expect(privateLobby.getLobbyId().toString().length).toBe(8);
     expect(privateLobby.getLobbyName()).toBe("test private lobby");
     expect(privateLobby.getAccess()).toBe("private");
     expect(privateLobby.getPassword()).toBe("test password");
