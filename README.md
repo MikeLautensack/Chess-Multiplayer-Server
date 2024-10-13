@@ -33,12 +33,15 @@ The first idea that came to mind was to build a multiplayer chess platform simil
 
 ## Features
 
-- Socket.io/Express Server:
+##### Socket.io/Express Server:
+
 - Real-time multiplayer functionality
 - Game state management and synchronization
 - Move validation and rule enforcement
 - Secure websocket connections for live gameplay-
-- Node Console Chess:
+
+##### Node Console Chess:
+
 - Text-based chess game playable in the terminal
 - Full implementation of chess rules and move validation
 - Simple interface for inputting moves
