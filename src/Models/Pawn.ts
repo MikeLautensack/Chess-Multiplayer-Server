@@ -11,11 +11,36 @@ class Pawn extends Piece {
       position,
       color,
       `${color === "white" ? "W" : color === "black" && "B"}P`,
-      color === "white" ? "♟︎ " : "♙ "
+      color === "white" ? "♟︎ " : "♙ ",
+      "pawn"
     );
   }
 
-  public setControlledSquares(board: Board): void {}
+  public setControlledSquares(board: Board): void {
+    const squares = board.getSquares();
+    const position = this.position;
+    const rankIndex = position.getPositionIndex()[0];
+    const fileIndex = position.getPositionIndex()[1];
+    if (this.color === "white") {
+      const squareLeft = squares[rankIndex - 1][fileIndex - 1];
+      const squareRight = squares[rankIndex - 1][fileIndex + 1];
+      const arr = [squareLeft, squareRight];
+      arr.forEach((square: Square) => {
+        if (square) {
+          square.setIsControlledByWhite(true);
+        }
+      });
+    } else {
+      const squareLeft = squares[rankIndex + 1][fileIndex - 1];
+      const squareRight = squares[rankIndex + 1][fileIndex + 1];
+      const arr = [squareLeft, squareRight];
+      arr.forEach((square: Square) => {
+        if (square) {
+          square.setIsControlledByWhite(true);
+        }
+      });
+    }
+  }
 
   public calcLegalMoves(board: Board): Position[] {
     const position = this.position;
@@ -62,6 +87,43 @@ class Pawn extends Piece {
           index++;
         }
       } else {
+        // Check squares on diagonals
+        const swSquare = square?.getAdjacencies().get("sw");
+        const seSquare = square?.getAdjacencies().get("se");
+        const diagonals = [swSquare, seSquare];
+        diagonals.forEach((square: Square | undefined) => {
+          if (square) {
+            const isSquareOccupied = square?.getIsOccupied();
+            const pieceColor = square?.getPiece()?.getColor();
+            if (isSquareOccupied) {
+              if (pieceColor !== color) {
+                posArr.push(square?.getPosition());
+              }
+            }
+          }
+        });
+
+        // Check forward squares
+        const sSquare = square?.getAdjacencies().get("s");
+        const s2Square = sSquare?.getAdjacencies().get("s");
+        const forwards = [sSquare];
+        if (!this.hasMoved) {
+          forwards.push(s2Square);
+        }
+        let obstructionDetected = false;
+        let index = 0;
+        while (!obstructionDetected && index < forwards.length) {
+          const square = forwards[index];
+          const isSquareOccupied = square?.getIsOccupied();
+          if (square) {
+            if (!isSquareOccupied) {
+              posArr.push(square?.getPosition());
+            } else {
+              obstructionDetected = true;
+            }
+          }
+          index++;
+        }
       }
     } else {
     }

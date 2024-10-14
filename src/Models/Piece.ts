@@ -11,18 +11,21 @@ abstract class Piece {
   protected pieceUnicode: string;
   protected legalMoves: Position[] = [];
   protected pinnedBy: Piece | undefined;
+  protected type: string;
 
   constructor(
     position: Position,
     color: "white" | "black",
     pieceStr: string,
-    pieceUnicode: string
+    pieceUnicode: string,
+    type: string
   ) {
     this.pieceId = uuidv4();
     this.position = position;
     this.color = color;
     this.pieceStr = pieceStr;
     this.pieceUnicode = pieceUnicode;
+    this.type = type;
   }
 
   public getPieceId(): string {
@@ -55,6 +58,10 @@ abstract class Piece {
 
   public setPinnedBy(piece: Piece): void {
     this.pinnedBy = piece;
+  }
+
+  public getType(): string {
+    return this.type;
   }
 
   abstract setControlledSquares(board: Board): void;

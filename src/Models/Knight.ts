@@ -8,7 +8,8 @@ class Knight extends Piece {
       position,
       color,
       `${color === "white" ? "W" : color === "black" && "B"}N`,
-      color === "white" ? "♞ " : "♘ "
+      color === "white" ? "♞ " : "♘ ",
+      "knight"
     );
   }
 

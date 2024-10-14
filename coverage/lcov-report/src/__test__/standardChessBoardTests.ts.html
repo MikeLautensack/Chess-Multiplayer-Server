@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/Models/Clock.ts</title>
+    <title>Code coverage report for src/__test__/standardChessBoardTests.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/Models</a> Clock.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/__test__</a> standardChessBoardTests.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/18</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/16</span>
             </div>
         
             
@@ -91,8 +91,20 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -101,17 +113,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -119,34 +143,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Time from "./Time.js";
-import TimeControl from "./TimeControl.js";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Player from "../Models/Player.js";
+import StandardChess from "../Models/StandardChess.js";
+import StandardChessBoard, {
+  files,
+  ranks,
+  startingPositions,
+} from "../Models/StandardChessBoard.js";
 &nbsp;
-class Clock {
-  private increment: number;
-  private whiteTime: Time;
-  private blackTime: Time;
+<span class="cstat-no" title="statement not covered" >describe("standard chess board tests", <span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+  let whitePlayer: Player;
+  let blackPlayer: Player;
+  let chess: StandardChess;
+  let board: StandardChessBoard;
 &nbsp;
-<span class="fstat-no" title="function not covered" >  constructor(t</span>imeControl: TimeControl) {
-<span class="cstat-no" title="statement not covered" >    this.increment = timeControl.getIncrement();</span>
-<span class="cstat-no" title="statement not covered" >    this.whiteTime = timeControl.getTime();</span>
-<span class="cstat-no" title="statement not covered" >    this.blackTime = timeControl.getTime();</span>
-  }
+<span class="cstat-no" title="statement not covered" >  beforeAll(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    whitePlayer = new Player("whitePlayer");</span>
+<span class="cstat-no" title="statement not covered" >    blackPlayer = new Player("blackPlayer");</span>
+<span class="cstat-no" title="statement not covered" >    chess = new StandardChess(whitePlayer, blackPlayer);</span>
+<span class="cstat-no" title="statement not covered" >    board = chess.getBoard();</span>
+  });
 &nbsp;
-  public <span class="fstat-no" title="function not covered" >getIncrement(</span>): number {
-<span class="cstat-no" title="statement not covered" >    return this.increment;</span>
-  }
+<span class="cstat-no" title="statement not covered" >  afterAll(<span class="fstat-no" title="function not covered" >() =</span>&gt; {});</span>
 &nbsp;
-  public <span class="fstat-no" title="function not covered" >getWhiteTime(</span>): Time {
-<span class="cstat-no" title="statement not covered" >    return this.whiteTime;</span>
-  }
-&nbsp;
-  public <span class="fstat-no" title="function not covered" >getBlackTime(</span>): Time {
-<span class="cstat-no" title="statement not covered" >    return this.blackTime;</span>
-  }
-}
-&nbsp;
-export default Clock;
+<span class="cstat-no" title="statement not covered" >  test("init standard chess board", <span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+    // Assertions
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; board.getSquares().length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      for (let j = <span class="cstat-no" title="statement not covered" >0;</span> j &lt; board.getSquares()[i].length; j++) {</span>
+        const rank = <span class="cstat-no" title="statement not covered" >ranks.get(i);</span>
+        const file = <span class="cstat-no" title="statement not covered" >files.get(j);</span>
+        const squareStr = <span class="cstat-no" title="statement not covered" >`${file}${rank}`;</span>
+        const startPos = <span class="cstat-no" title="statement not covered" >startingPositions.get(squareStr);</span>
+<span class="cstat-no" title="statement not covered" >        expect(board.getSquares()[i][j].getPiece()?.getColor()).toBe(</span>
+          startPos?.pieceColor
+        );
+<span class="cstat-no" title="statement not covered" >        expect(board.getSquares()[i][j].getPiece()?.getPieceStr()).toBe(</span>
+          startPos?.pieceType
+        );
+      }
+    }
+  });
+});
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -154,7 +193,7 @@ export default Clock;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-14T12:58:22.833Z
+                at 2024-10-14T12:57:36.868Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

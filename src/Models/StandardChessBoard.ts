@@ -259,7 +259,34 @@ export const startingPositions = new Map([
 const checkForPin = (
   squares: Square[][],
   piecePos: Position,
+  color: "white" | "black",
   dir: string
 ): Pin | undefined => {
+  let pinnablePieceDetected: boolean = false;
+  let kingDetected: boolean = false;
+  let endOfBoardDetected: boolean = false;
+  const rank = piecePos.getPositionIndex()[0];
+  const file = piecePos.getPositionIndex()[1];
+  let adjacentSquare: Square = squares[rank][file];
+  let squareEvalArr: string[] = [];
+  while (!endOfBoardDetected) {
+    if (adjacentSquare) {
+      const isSquareOccupied = adjacentSquare.getIsOccupied();
+      if (isSquareOccupied) {
+        const pieceColor = adjacentSquare.getPiece()?.getColor();
+        if (pieceColor !== color) {
+          squareEvalArr.push(adjacentSquare.getPiece()?.getType()!);
+        } else {
+          if (!kingDetected) {
+            return undefined;
+          }
+        }
+      } else {
+        squareEvalArr.push("empty");
+      }
+    } else {
+      endOfBoardDetected = true;
+    }
+  }
   return undefined;
 };

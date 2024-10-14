@@ -11,6 +11,7 @@ abstract class Game {
   protected checkmate: boolean = false;
   protected stalemate: boolean = false;
   protected result: undefined | "white won" | "black won" | "draw" = undefined;
+  protected moves: Map<number, string[]> = new Map([]);
 
   constructor(whitePlayer: Player, blackPlayer: Player) {
     this.gameId = uuidv4();
@@ -38,11 +39,14 @@ abstract class Game {
     return this.result;
   }
 
+  public getMoves(): Map<number, string[]> {
+    return this.moves;
+  }
+
   abstract startGame(): void;
-
   abstract makeMove(): void;
-
   abstract endGame(): void;
+  abstract printGame(): void;
 }
 
 export default Game;

@@ -10,7 +10,8 @@ class Rook extends Piece {
       position,
       color,
       `${color === "white" ? "W" : color === "black" && "B"}R`,
-      color === "white" ? "♜ " : "♖ "
+      color === "white" ? "♜ " : "♖ ",
+      "rook"
     );
   }
 

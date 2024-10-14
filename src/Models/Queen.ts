@@ -9,7 +9,8 @@ class Queen extends Piece {
       position,
       color,
       `${color === "white" ? "W" : color === "black" && "B"}Q`,
-      color === "white" ? "♛ " : "♕ "
+      color === "white" ? "♛ " : "♕ ",
+      "queen"
     );
   }
 

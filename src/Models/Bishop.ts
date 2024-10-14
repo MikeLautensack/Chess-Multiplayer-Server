@@ -8,7 +8,8 @@ class Bishop extends Piece {
       position,
       color,
       `${color === "white" ? "W" : color === "black" && "B"}B`,
-      color === "white" ? "♝ " : "♗ "
+      color === "white" ? "♝ " : "♗ ",
+      "bishop"
     );
   }
 

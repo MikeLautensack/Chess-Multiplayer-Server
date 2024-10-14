@@ -6,7 +6,7 @@ import StandardChessBoard, {
   startingPositions,
 } from "../Models/StandardChessBoard.js";
 
-describe("standard chess tests", () => {
+describe("standard chess board tests", () => {
   let whitePlayer: Player;
   let blackPlayer: Player;
   let chess: StandardChess;
@@ -21,15 +21,8 @@ describe("standard chess tests", () => {
 
   afterAll(() => {});
 
-  test("init standard chess", () => {
+  test("init standard chess board", () => {
     // Assertions
-    expect(chess).toBeDefined();
-    expect(board).toBeDefined();
-    expect(chess.getWhitePlayer()).toBeDefined();
-    expect(chess.getBlackPlayer()).toBeDefined();
-    expect(chess.getResult()).toBeUndefined();
-    expect(chess.getIsWhiteToMove()).toBeTruthy();
-
     for (let i = 0; i < board.getSquares().length; i++) {
       for (let j = 0; j < board.getSquares()[i].length; j++) {
         const rank = ranks.get(i);
@@ -44,9 +37,5 @@ describe("standard chess tests", () => {
         );
       }
     }
-  });
-
-  test("start game", () => {
-    // Assertions
   });
 });
