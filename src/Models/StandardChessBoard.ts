@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import Bishop from "./Bishop.js";
 import Board from "./Board.js";
 import King from "./King.js";
@@ -26,10 +27,11 @@ class StandardChessBoard extends Board {
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
         const position = new Position(ranks.get(i)!, files.get(j)!, [i, j]);
+        const indexSum = i + j;
         this.squares[i][j] = new Square(
           position,
           false,
-          (i + j) % 0 ? "light" : "dark",
+          indexSum % 2 === 0 ? "light" : "dark",
           this
         );
       }
@@ -174,7 +176,6 @@ class StandardChessBoard extends Board {
 
   // Print the board to the console
   public printBoard(): void {
-    console.log(` ________________________`);
     let rank = 8;
     for (let i = 0; i < 8; i++) {
       let squareArr = [];
@@ -185,15 +186,47 @@ class StandardChessBoard extends Board {
         if (isOccupied) {
           squareArr.push(board[i][file].getPiece()!.getPieceUnicode());
         } else {
-          squareArr.push("__");
+          squareArr.push("  ");
         }
       }
       console.log(
-        `${rank}|${squareArr[0]}|${squareArr[1]}|${squareArr[2]}|${squareArr[3]}|${squareArr[4]}|${squareArr[5]}|${squareArr[6]}|${squareArr[7]}|`
+        `${rank} ${
+          board[i][0].getColor() === "light"
+            ? chalk.bgWhite(squareArr[0])
+            : chalk.bgBlue(squareArr[0])
+        }${
+          board[i][1].getColor() === "light"
+            ? chalk.bgWhite(squareArr[1])
+            : chalk.bgBlue(squareArr[1])
+        }${
+          board[i][2].getColor() === "light"
+            ? chalk.bgWhite(squareArr[2])
+            : chalk.bgBlue(squareArr[2])
+        }${
+          board[i][3].getColor() === "light"
+            ? chalk.bgWhite(squareArr[3])
+            : chalk.bgBlue(squareArr[3])
+        }${
+          board[i][4].getColor() === "light"
+            ? chalk.bgWhite(squareArr[4])
+            : chalk.bgBlue(squareArr[4])
+        }${
+          board[i][5].getColor() === "light"
+            ? chalk.bgWhite(squareArr[5])
+            : chalk.bgBlue(squareArr[5])
+        }${
+          board[i][6].getColor() === "light"
+            ? chalk.bgWhite(squareArr[6])
+            : chalk.bgBlue(squareArr[6])
+        }${
+          board[i][7].getColor() === "light"
+            ? chalk.bgWhite(squareArr[7])
+            : chalk.bgBlue(squareArr[7])
+        }`
       );
       rank--;
     }
-    console.log(`  A  B  C  D  E  F  G  H `);
+    console.log(`  A B C D E F G H `);
   }
 }
 

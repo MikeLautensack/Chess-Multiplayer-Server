@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import Board from "./Board.js";
 import Piece from "./Piece.js";
 import Position from "./Position.js";
@@ -13,7 +14,7 @@ class King extends Piece {
       position,
       color,
       `${color === "white" ? "W" : color === "black" && "B"}K`,
-      color === "white" ? "♚ " : "♔ ",
+      color === "white" ? chalk.green("♚ ") : chalk.black("♔ "),
       "king"
     );
   }
