@@ -1,14 +1,17 @@
+import { v4 as uuidv4 } from "uuid";
 class Game {
     gameId;
-    isWhiteToMove = undefined;
+    isWhiteToMove = true;
     whitePlayer;
     blackPlayer;
-    result;
-    constructor(gameId, whitePlayer, blackPlayer, result) {
-        this.gameId = gameId;
+    checkmate = false;
+    stalemate = false;
+    result = undefined;
+    moves = new Map([]);
+    constructor(whitePlayer, blackPlayer) {
+        this.gameId = uuidv4();
         this.whitePlayer = whitePlayer;
         this.blackPlayer = blackPlayer;
-        this.result = result;
     }
     getGameId() {
         return this.gameId;
@@ -24,6 +27,9 @@ class Game {
     }
     getResult() {
         return this.result;
+    }
+    getMoves() {
+        return this.moves;
     }
 }
 export default Game;

@@ -3,7 +3,7 @@ import Position from "../Models/Position.js";
 describe("bishop tests", () => {
     let bishop;
     beforeAll(() => {
-        bishop = new Bishop(1, new Position("2", "A"), "white");
+        bishop = new Bishop(new Position(1, "a", [7, 0]), "white");
     });
     afterAll(() => { });
     test("init bishop", () => {

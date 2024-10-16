@@ -3,7 +3,7 @@ import Rook from "../Models/Rook.js";
 describe("rook tests", () => {
     let rook;
     beforeAll(() => {
-        rook = new Rook(1, new Position("2", "A"), "white");
+        rook = new Rook(new Position(1, "a", [7, 0]), "white");
     });
     afterAll(() => { });
     test("init rook", () => {

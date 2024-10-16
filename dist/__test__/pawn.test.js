@@ -3,7 +3,7 @@ import Position from "../Models/Position.js";
 describe("pawn tests", () => {
     let pawn;
     beforeAll(() => {
-        pawn = new Pawn(1, new Position("2", "A"), "white");
+        pawn = new Pawn(new Position(1, "a", [7, 0]), "white");
     });
     afterAll(() => { });
     test("init pawn", () => {

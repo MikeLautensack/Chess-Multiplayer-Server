@@ -3,7 +3,7 @@ import Position from "../Models/Position.js";
 describe("knight tests", () => {
     let knight;
     beforeAll(() => {
-        knight = new Knight(1, new Position("2", "A"), "white");
+        knight = new Knight(new Position(1, "a", [7, 0]), "white");
     });
     afterAll(() => { });
     test("init knight", () => {

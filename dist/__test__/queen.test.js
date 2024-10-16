@@ -3,7 +3,7 @@ import Queen from "../Models/Queen.js";
 describe("queen tests", () => {
     let queen;
     beforeAll(() => {
-        queen = new Queen(1, new Position("2", "A"), "white");
+        queen = new Queen(new Position(1, "a", [7, 0]), "white");
     });
     afterAll(() => { });
     test("init queen", () => {
