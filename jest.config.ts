@@ -16,9 +16,4 @@ export default {
   coverageDirectory: "coverage",
   collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!src/**/*.d.ts"],
   testPathIgnorePatterns: ["/node_modules/", "/dist/"],
-  globals: {
-    "ts-jest": {
-      useESM: true, // if using TypeScript
-    },
-  },
 };
